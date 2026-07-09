@@ -18,3 +18,6 @@ brew "tealdeer"
 brew "lazygit"
 brew "gh"
 brew "git-lfs"
+
+#view system
+brew "fastfetch"
