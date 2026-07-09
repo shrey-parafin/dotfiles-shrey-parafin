@@ -1,0 +1,33 @@
+# Local history still records to Atuin's SQLite database with auto_sync disabled.
+# auto_sync only controls network sync when you are logged into an Atuin account.
+auto_sync = false
+sync_frequency = "1h"
+update_check = false
+
+search_mode = "fuzzy"
+filter_mode = "global"
+style = "compact"
+inline_height = 20
+show_preview = true
+
+# Keep noisy failed commands out of the history database.
+store_failed = false
+
+# Built-in secret filtering plus a few extra company-machine guardrails.
+secrets_filter = true
+history_filter = [
+  "^aws .*--secret",
+  "^curl .*Authorization:",
+  "^export .*TOKEN=",
+  "^export .*SECRET=",
+  "^export .*PASSWORD=",
+]
+
+[stats]
+common_subcommands = [
+  "git",
+  "brew",
+  "gh",
+  "fd",
+  "rg",
+]

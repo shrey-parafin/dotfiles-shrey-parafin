@@ -1,0 +1,217 @@
+# config can be reloaded at runtime by ctrl+shift+, (Linux) or cmd+shift+, (macOS). 
+# These are the default keybindings, but can define your own via the reload_config action.
+
+# ====================
+# font, color, theme
+# ====================
+# Installed by cask "font-pt-mono" in Brewfile.
+font-family = "PT Mono"
+font-size = 15
+background-opacity = 0.92
+#theme = "coolnight"
+theme = "custom-rose-pine-moon" 
+#theme = "Aurora"
+desktop-notifications = true
+# light:GruvboxLightHard
+
+quick-terminal-animation-duration=0
+window-inherit-font-size = true
+
+
+
+# minimum-contrast = 1.80
+minimum-contrast = 1.2
+# ====================
+# = Window Appearance
+# ====================
+# Add padding between terminal content and window edges
+# First number is left padding, second is right. Single number applies to both
+window-padding-x = 4
+# First number is top padding, second is bottom. Single number applies to both
+window-padding-y = 4
+# When window size isn't perfectly divisible by cell size, distribute extra space evenly
+# instead of putting it all on the right/bottom
+window-padding-balance = true
+
+# Titlebar style options:
+# - native: Standard macOS titlebar
+# - transparent: Native titlebar that shows window background color
+# - tabs: Custom titlebar with integrated tabs
+# - hidden: No titlebar but keeps window borders/rounded corners
+macos-titlebar-style = "tabs"
+window-decoration = true
+
+# Control window appearance theme:
+# - system: Follow system light/dark setting
+# - light: Always use light theme
+# - dark: Always use dark theme
+# - ghostty: Use terminal colors for window chrome (requires gtk-adwaita)
+# window-theme = "system"
+
+# # Color space for terminal:
+# # - srgb: Standard color space
+# # - display-p3: Wider color gamut for compatible displays
+window-colorspace = "display-p3"
+
+# # ===================
+# # = Cursor Settings
+# # ===================
+# # Cursor appearance options:
+# # - block: Solid rectangular cursor
+# # - bar: Vertical line cursor
+# # - underline: Horizontal line under character
+# # - block_hollow: Outlined rectangular cursor
+cursor-style = "bar"
+
+# # Cursor visibility (0.0-1.0). Lower values make cursor more transparent
+cursor-opacity = 1.0
+
+# # Instead of using a specific cursor color, swap text/background colors
+# # under cursor. Often provides better visibility
+cursor-invert-fg-bg = true
+
+# # ==================
+# # = Shell Integration
+# # ==================
+# # Enable features like directory tracking, prompt marking:
+# # - detect: Auto-detect shell type
+# # - none: Disable integration
+# # - bash/fish/zsh: Force specific shell type
+shell-integration = "detect"
+
+# # Control which shell integration features to enable:
+# # - cursor: Changes cursor to bar at prompt
+# # - title: Updates window title based on current directory
+# # - sudo: Preserves terminal settings in sudo sessions
+shell-integration-features = "cursor,title"
+
+# # =================
+# # = Mouse Behavior
+# # =================
+# # Adjust mouse scroll speed. Higher values = faster scrolling
+# # 1.0 is default, 2.0 is twice as fast, 0.5 is half speed
+mouse-scroll-multiplier = 1.0
+
+# # ===================
+# # = macOS Specific
+# # ===================
+# # Make Option/Alt key behave like Alt modifier instead of special character input
+# # true: Option acts as Alt
+# # false: Option enables special character input
+# # left/right: Only affect left or right Option key
+# macos-option-as-alt = true
+
+# # Faster fullscreen without animations (but disables tabs)
+# # true: Quick fullscreen without animation
+# # false: Native macOS fullscreen animation
+# # macos-non-native-fullscreen = true
+
+# # Automatically enable secure keyboard input when password prompt detected
+# # Prevents other applications from reading keyboard input
+# macos-auto-secure-input = true
+
+# # Show visual indicator when secure input is enabled
+# macos-secure-input-indication = true
+
+# # =======================
+# # = Window Management
+# # =======================
+# # Save and restore window state between sessions:
+# # - always: Always save state on exit
+# # - never: Never save state
+# # - default: Use system settings (only save on force quit)
+# window-save-state = "always"
+
+# # New windows/tabs inherit working directory from current terminal
+# window-inherit-working-directory = true
+
+# # Keep terminal window open after command exits
+# # Useful for examining output of short-lived commands
+# wait-after-command = false
+
+# # Initial window size in character cells
+# # Helpful for consistent window sizes across launches
+# window-width = 120
+# window-height = 35
+
+# # =================
+# # = Key Bindings
+# # =================
+# cmd+backspace deletes the entire line
+keybind = super+backspace=text:\x15
+# # Create new window (Cmd+N)
+# keybind = "super+n=new_window"
+# # Create new tab (Cmd+T)
+# keybind = "super+t=new_tab"
+# # Split pane vertically (Cmd+Shift+D)
+# keybind = "super+shift+d=new_split:right"
+# # Split pane horizontally (Cmd+D)
+# keybind = "super+d=new_split:bottom"
+# # Navigate between split panes using Cmd+Arrow keys
+# keybind = "super+left=move_focus:left"
+# keybind = "super+right=move_focus:right"
+# keybind = "super+up=move_focus:up"
+# keybind = "super+down=move_focus:down"
+# # Font size adjustment with Cmd+Plus/Minus/0
+# keybind = "super+plus=increase_font_size"
+# keybind = "super+minus=decrease_font_size"
+# keybind = "super+0=reset_font_size"
+
+# ── Ghostty Pane Management 
+# Note: Using ⌘D for new split (overrides default), and CAPS+I/J/K/L for navigation
+# The original plan was ⌘N for split but it conflicts with default new_window
+
+# Create new split to the right (⌘D - overrides default new_split:down)
+keybind = super+d=new_split:right
+# Create new split downward (⌘U - overrides default ⇧⌘D)
+keybind = super+u=new_split:down
+# Create new window (⇧⌘N) 
+keybind = super+shift+n=new_window
+
+# Navigate between panes with CAPS+I/J/K/L (Ctrl+Shift+Alt)
+keybind = ctrl+shift+alt+j=goto_split:left
+keybind = ctrl+shift+alt+k=goto_split:down  
+keybind = ctrl+shift+alt+i=goto_split:up
+keybind = ctrl+shift+alt+l=goto_split:right
+
+# Resize panes with opt+{-/+} (horizontal resize)
+keybind = alt+minus=resize_split:left,10
+keybind = alt+equal=resize_split:right,10
+
+# Note: ⌘+CAPS+I/J/K/L removed - Ghostty doesn't have native pane swapping functionality
+# If you need pane swapping, you might need to use a different terminal or workflow
+
+# Equalize split sizes with ⌘+CAPS+E
+keybind = super+ctrl+shift+alt+e=equalize_splits
+
+# # =================
+# # = Miscellaneous
+# # =================
+# # Scrollback buffer size in bytes
+# # 100MB allows for substantial history while managing memory usage
+# scrollback-limit = 1000000
+
+# # Show warning when pasting text containing newlines
+# # Helps prevent accidental execution of multi-line commands
+# clipboard-paste-protection = true
+keybind = shift+enter=text:\n
+
+# undo
+# ⌘Z → raw Ctrl-underscore (zsh "undo")
+keybind = super+z=text:\x1f
+
+# ⇧⌘Z → run zsh's execute-named-cmd, type "redo", press Enter
+keybind = super+shift+z=text:\x1bxredo\n
+
+# ⌘G → navi cheatsheet widget (same as Ctrl-G in zsh)
+keybind = super+g=text:\x07
+
+# ⌘R → fzf history widget (same as Ctrl-R in zsh)
+keybind = super+r=text:\x12
+
+# ===================
+# = Custom Shaders
+# ===================
+# Cursor warp trail effect
+custom-shader = shaders/cursor_warp.glsl
+custom-shader-animation = true
