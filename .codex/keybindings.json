@@ -1,0 +1,10 @@
+[
+  {
+    "command": "composer.decreaseReasoningEffort",
+    "key": "Command+Down"
+  },
+  {
+    "command": "composer.increaseReasoningEffort",
+    "key": "Command+Up"
+  }
+]

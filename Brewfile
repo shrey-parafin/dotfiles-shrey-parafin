@@ -18,6 +18,10 @@ brew "tealdeer"
 brew "lazygit"
 brew "gh"
 brew "git-lfs"
+brew "git"
+brew "tmux"
+brew "uv"
+brew "yarn"
 
 #view system
 brew "fastfetch"

@@ -10,6 +10,36 @@ Install after reviewing `Brewfile`:
 brew bundle --file Brewfile
 ```
 
+The root `Brewfile` contains shared tools. Parafin role dependencies are split
+between `brewfiles/data-platform.Brewfile` and
+`brewfiles/infrastructure.Brewfile`, following the company onboarding guide.
+
+```zsh
+# Check everything currently tracked (default).
+scripts/brewfile.sh
+
+# Check or install one role plus shared tools.
+scripts/brewfile.sh check data-platform
+scripts/brewfile.sh install infrastructure
+```
+
+## Codex and Claude
+
+Portable, secret-free settings are tracked in `.codex` and `.claude`.
+Authentication, caches, session history, and remote-managed settings remain
+local.
+
+```zsh
+scripts/bootstrap_ai_configs.sh --check
+scripts/bootstrap_ai_configs.sh --replace
+```
+
+## uv malware checks
+
+`UV_MALWARE_CHECK=1` is exported from `.zshrc`. uv 0.11.16 or newer checks
+the lockfile against the Open Source Vulnerabilities database after
+synchronization and stops when it matches a known malware advisory.
+
 Current tool candidates:
 
 | Tool | Why it is here |

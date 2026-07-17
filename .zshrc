@@ -11,6 +11,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/python@3.14/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export UV_MALWARE_CHECK=1
 
 # Parafin dotfiles shell integrations.
 if [[ -r "$HOME/Desktop/dev/dotfiles-shrey-parafin/.config/zsh/atuin.zsh" ]]; then
