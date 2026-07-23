@@ -41,6 +41,7 @@ config_files=(
   ".codex/keybindings.json"
   ".codex/rules/default.rules"
   ".claude/settings.json"
+  ".claude/skills/python-style-google"
 )
 
 for relative_path in "${config_files[@]}"; do
