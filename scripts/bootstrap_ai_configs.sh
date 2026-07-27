@@ -43,6 +43,7 @@ config_files=(
   ".codex/skills/performance-hints"
   ".claude/settings.json"
   ".claude/skills/python-style-google"
+  ".claude/skills/performance-hints"
 )
 
 for relative_path in "${config_files[@]}"; do
