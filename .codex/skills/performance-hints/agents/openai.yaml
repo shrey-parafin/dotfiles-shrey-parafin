@@ -1,0 +1,4 @@
+interface:
+  display_name: "Performance Hints"
+  short_description: "Measure and optimize performance with evidence"
+  default_prompt: "Use $performance-hints to diagnose and improve this performance-sensitive code path with evidence."
