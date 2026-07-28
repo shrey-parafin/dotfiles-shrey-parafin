@@ -1,10 +1,10 @@
 [
   {
     "command": "composer.decreaseReasoningEffort",
-    "key": "Command+Down"
+    "key": "Command+Shift+Down"
   },
   {
     "command": "composer.increaseReasoningEffort",
-    "key": "Command+Up"
+    "key": "Command+Shift+Up"
   }
 ]
