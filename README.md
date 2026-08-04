@@ -117,3 +117,17 @@ ln -s "$PWD/.zshrc" ~/.zshrc
 ```
 
 The tracked `.zshrc` sets up local binaries, Bun, Python 3.14 from Homebrew, and the repo-local Atuin integration.
+
+### Pierre developer tools
+
+The shell also provides launchers for Pierre's Diffs, Trees, and DiffsHub tools:
+
+```zsh
+diffs                 # open diffs.com
+diffs edit            # open the editable Diffs demo
+diffs docs            # open Diffs documentation
+trees                 # open trees.software
+trees docs            # open Trees documentation
+diffshub               # open the current GitHub pull request in DiffsHub
+diffshub <github-url>  # open a specific GitHub change in DiffsHub
+```
