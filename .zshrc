@@ -17,3 +17,7 @@ export UV_MALWARE_CHECK=1
 if [[ -r "$HOME/Desktop/dev/dotfiles-shrey-parafin/.config/zsh/atuin.zsh" ]]; then
   source "$HOME/Desktop/dev/dotfiles-shrey-parafin/.config/zsh/atuin.zsh"
 fi
+
+if [[ -r "$HOME/Desktop/dev/dotfiles-shrey-parafin/.config/zsh/pierre.zsh" ]]; then
+  source "$HOME/Desktop/dev/dotfiles-shrey-parafin/.config/zsh/pierre.zsh"
+fi
