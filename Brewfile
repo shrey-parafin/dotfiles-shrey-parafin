@@ -8,6 +8,7 @@ brew "fzf"
 brew "fd"
 brew "ripgrep"
 brew "bat"
+brew "glow"
 brew "eza"
 brew "navi"
 
