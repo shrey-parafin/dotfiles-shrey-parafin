@@ -70,6 +70,12 @@ cursor-opacity = 1.0
 # # under cursor. Often provides better visibility
 cursor-invert-fg-bg = true
 
+# Make the focused split immediately apparent by strongly dimming every other
+# split. The muted lavender divider stays visible without competing for focus.
+unfocused-split-opacity = 0.50
+unfocused-split-fill = #191724
+split-divider-color = #c4a7e7
+
 # # ==================
 # # = Shell Integration
 # # ==================
@@ -167,6 +173,18 @@ keybind = super+d=new_split:right
 keybind = super+u=new_split:down
 # Create new window (⇧⌘N) 
 keybind = super+shift+n=new_window
+
+# Jump directly to tabs with ⌘1 through ⌘9. If a requested tab does not
+# exist, Ghostty focuses the last available tab.
+keybind = super+1=goto_tab:1
+keybind = super+2=goto_tab:2
+keybind = super+3=goto_tab:3
+keybind = super+4=goto_tab:4
+keybind = super+5=goto_tab:5
+keybind = super+6=goto_tab:6
+keybind = super+7=goto_tab:7
+keybind = super+8=goto_tab:8
+keybind = super+9=goto_tab:9
 
 # Navigate between panes with CAPS+I/J/K/L (Ctrl+Shift+Alt)
 keybind = ctrl+shift+alt+j=goto_split:left
