@@ -109,6 +109,21 @@ ls -la ~/.config/ghostty
 
 Reload Ghostty config with `Cmd+Shift+,`.
 
+### Split-pane picker
+
+Hammerspoon makes `Cmd+1` through `Cmd+9` focus split panes 1 through 9 in
+the current Ghostty tab. Double-tap `Cmd` to open a picker of the current
+tab's panes; type a number (or filter by title) and press Return.
+
+```zsh
+brew bundle --file Brewfile
+ln -s "$PWD/.hammerspoon" ~/.hammerspoon
+```
+
+Open Hammerspoon after installing it, then grant it Accessibility and
+Automation permission when macOS asks. Reload its configuration from the menu
+afterward.
+
 ## Zsh
 
 ```zsh

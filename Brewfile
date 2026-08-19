@@ -12,6 +12,9 @@ brew "glow"
 brew "eza"
 brew "navi"
 
+# macOS automation used for Ghostty split-pane selection.
+cask "hammerspoon"
+
 # Optional shell/productivity tools. Keep only the ones that earn their spot.
 brew "zoxide"
 brew "atuin"
