@@ -28,3 +28,6 @@ brew "yarn"
 
 #view system
 brew "fastfetch"
+
+# Keyboard shortcut layer and app toggles.
+cask "karabiner-elements"
