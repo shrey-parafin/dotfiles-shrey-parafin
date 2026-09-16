@@ -1,2 +1,4 @@
 .DS_Store
 *.swp
+.config/karabiner/automatic_backups/
+.config/karabiner/karabiner.json.backup.*

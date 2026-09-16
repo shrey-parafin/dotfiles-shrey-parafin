@@ -146,3 +146,19 @@ trees docs            # open Trees documentation
 diffshub               # open the current GitHub pull request in DiffsHub
 diffshub <github-url>  # open a specific GitHub change in DiffsHub
 ```
+
+## Keyboard (Karabiner-Elements)
+
+The Keychron K4 HE and Apple internal keyboard use Caps Lock + S / G / B to toggle
+Slack / Ghostty / Chrome and the previous app. Caps Lock + Backspace deletes the
+previous word. Caps Lock is only a shortcut modifier; tapping it alone does nothing.
+
+```zsh
+brew install --cask karabiner-elements
+scripts/bootstrap_karabiner.sh --check
+scripts/bootstrap_karabiner.sh --replace
+```
+
+See [the keyboard guide](docs/karabiner.md) for permissions, restore/export steps,
+the flow diagram, rule examples, and suggested bindings. The full configuration
+lives in `.config/karabiner/karabiner.json`.
