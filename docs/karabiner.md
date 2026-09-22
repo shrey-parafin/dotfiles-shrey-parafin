@@ -24,7 +24,7 @@ as enabled on the current Mac on September 16, 2026.
 ## What is saved
 
 The complete active configuration is in [karabiner.json](../.config/karabiner/karabiner.json).
-It includes the selected Default profile, eight manipulators for the Caps Lock
+It includes the selected Default profile, fourteen manipulators for the Caps Lock
 layer, the American National Standards Institute (ANSI) virtual keyboard
 layout, and the Keychron device override (`ignore: false`).
 
@@ -64,11 +64,14 @@ Karabiner watches the live directory and reloads file changes.
 | Hold Caps Lock, press S inside Slack | Focus the most recently used running app |
 | Hold Caps Lock, press G | Toggle Ghostty and the previous app |
 | Hold Caps Lock, press B | Toggle Google Chrome and the previous app |
+| Hold Caps Lock, press C | Toggle Codex and the previous app |
+| Hold Caps Lock, press L | Toggle Linear and the previous app |
+| Hold Caps Lock, press N | Toggle Notion and the previous app |
 | Hold Caps Lock, press Backspace | Send Option + Backspace to delete the previous word; repeats while held |
 | Tap Caps Lock alone | Do nothing; capitalization is disabled on this key |
 | Release Caps Lock | Clear the shortcut layer |
 
-Caps Lock is consumed while held; S, G, B, and Backspace have layer bindings. Other
+Caps Lock is consumed while held; S, G, B, C, L, N, and Backspace have layer bindings. Other
 letters pass through normally. These shortcuts with additional Command, Control, Option, or
 Shift modifiers does not match this shortcut. Existing capitalization is allowed.
 Holding S, G, or B does not repeat the app-switch action. Word deletion follows
@@ -97,13 +100,13 @@ sequenceDiagram
     User->>Keyboard: Hold Caps Lock
     Keyboard->>K: Caps down
     K->>K: caps_slack_layer = 1 (consume Caps)
-    alt S, G, or B pressed while Caps held
+    alt S, G, B, C, L, or N pressed while Caps held
         Keyboard->>K: App shortcut down
         K->>Rules: Check layer and frontmost app
         alt Target app is frontmost
             K->>OS: Focus app history index 1
         else Another app is frontmost
-            K->>OS: Open or focus Slack / Ghostty / Chrome
+            K->>OS: Open or focus Slack / Ghostty / Chrome / Codex / Linear / Notion
         end
         Note over K,OS: Native app action; no synthetic S or shell script
     else Backspace pressed while Caps held
@@ -123,8 +126,8 @@ The behavior in pseudocode:
 
 ```text
 Caps down → layer = 1
-S / G / B down when layer == 1:
-    target = Slack / Ghostty / Chrome
+S / G / B / C / L / N down when layer == 1:
+    target = Slack / Ghostty / Chrome / Codex / Linear / Notion
     if target is frontmost: focus previous running app
     else: launch or focus target
 Backspace down when layer == 1 → emit Option + Backspace

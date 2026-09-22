@@ -5,6 +5,7 @@
 - Karabiner-Elements remapping is enabled for this keyboard and the Apple internal keyboard.
 - Hold Caps Lock and press S to focus Slack; repeat from Slack to return to the previous app.
 - Caps Lock + G toggles Ghostty and the previous app; Caps Lock + B toggles Google Chrome and the previous app.
+- Caps Lock + C toggles Codex and the previous app; Caps Lock + L toggles Linear and the previous app; Caps Lock + N toggles Notion and the previous app.
 - Caps Lock + Backspace sends Option + Backspace to delete the previous word; holding Backspace repeats.
 - Caps Lock is only a shortcut modifier; tapping it alone does nothing.
 - Active configuration: `/Users/shrey/.config/karabiner/karabiner.json`.

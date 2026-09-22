@@ -149,9 +149,9 @@ diffshub <github-url>  # open a specific GitHub change in DiffsHub
 
 ## Keyboard (Karabiner-Elements)
 
-The Keychron K4 HE and Apple internal keyboard use Caps Lock + S / G / B to toggle
-Slack / Ghostty / Chrome and the previous app. Caps Lock + Backspace deletes the
-previous word. Caps Lock is only a shortcut modifier; tapping it alone does nothing.
+The Keychron K4 HE and Apple internal keyboard use Caps Lock + S / G / B / C / L / N to toggle
+Slack / Ghostty / Chrome / Codex / Linear / Notion and the previous app. Caps Lock + Backspace
+deletes the previous word. Caps Lock is only a shortcut modifier; tapping it alone does nothing.
 
 ```zsh
 brew install --cask karabiner-elements
