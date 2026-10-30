@@ -1,5 +1,31 @@
 {
-  "model": "sonnet",
+  "model": "claude-opus-5-5",
   "effortLevel": "medium",
-  "theme": "dark"
+  "theme": "dark",
+  "editorMode": "normal",
+  "extraKnownMarketplaces": {
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "typesafe-ai": {
+      "source": {
+        "source": "github",
+        "repo": "typesafe-ai/skills"
+      }
+    },
+    "cursor-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "cursor/plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "i-have-adhd@i-have-adhd": true,
+    "typesafe@typesafe-ai": true,
+    "pstack@cursor-plugins": true
+  }
 }

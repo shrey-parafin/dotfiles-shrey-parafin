@@ -29,10 +29,17 @@ Portable, secret-free settings are tracked in `.codex` and `.claude`.
 Authentication, caches, session history, and remote-managed settings remain
 local.
 
+`.claude/settings.json` holds only the portable subset of Claude settings:
+model, effort, theme, and public plugins. The bootstrap script does not link
+it, because the live `~/.claude/settings.json` also carries company-specific
+config that stays off this public repo. Merge it into the live file by hand.
+
 ```zsh
 scripts/bootstrap_ai_configs.sh --check
 scripts/bootstrap_ai_configs.sh --replace
 ```
+
+### pstack in Codex
 
 The Codex setup includes 58 [pstack](https://github.com/cursor/plugins/tree/main/pstack)
 skills, pinned with their supporting files in `.codex/vendor/pstack` and exposed
@@ -40,6 +47,23 @@ through `.codex/skills`. Use `$poteto-mode` in Codex on your next turn.
 See the [Codex compatibility note](.codex/vendor/pstack/CODEX.md) for tool mapping
 and Cursor-only features. The bootstrap script links each skill separately,
 preserving unrelated locally installed skills.
+### pstack in Claude Code
+
+`.claude/settings.json` enables [pstack](https://github.com/cursor/plugins/tree/main/pstack),
+poteto's skill pack, from the `cursor-plugins` marketplace. Claude Code installs
+it on launch once those entries are in the live settings file. To install it by hand:
+
+```zsh
+claude plugin marketplace add cursor/plugins
+claude plugin install pstack@cursor-plugins
+claude plugin update pstack@cursor-plugins   # auto-update is off for this marketplace
+```
+
+Run `/pstack:setup-pstack` once to write model choices to
+`~/.claude/rules/pstack-models.md`. Then start rigorous tasks with
+`/pstack:poteto-mode <task>`; it picks a playbook and calls the other skills.
+`/pstack:poteto-help` explains which skill fits. Skills and agents are
+prefixed with `pstack:` in Claude Code.
 
 ## uv malware checks
 

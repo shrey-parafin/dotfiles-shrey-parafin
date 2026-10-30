@@ -42,7 +42,6 @@ config_files=(
   ".codex/rules/default.rules"
   ".codex/skills/performance-engineering"
   ".codex/skills/show-me"
-  ".claude/settings.json"
   ".claude/skills/python-style-google"
   ".claude/skills/performance-hints"
 )
