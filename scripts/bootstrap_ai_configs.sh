@@ -46,6 +46,10 @@ config_files=(
   ".claude/skills/performance-hints"
 )
 
+for skill_path in "${repo_root}"/.codex/vendor/pstack/skills/*(N/); do
+  config_files+=(".codex/skills/${skill_path:t}")
+done
+
 for relative_path in "${config_files[@]}"; do
   source_path="${repo_root}/${relative_path}"
   target_path="${HOME}/${relative_path}"

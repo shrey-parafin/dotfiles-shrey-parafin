@@ -39,7 +39,15 @@ scripts/bootstrap_ai_configs.sh --check
 scripts/bootstrap_ai_configs.sh --replace
 ```
 
-### pstack
+### pstack in Codex
+
+The Codex setup includes 58 [pstack](https://github.com/cursor/plugins/tree/main/pstack)
+skills, pinned with their supporting files in `.codex/vendor/pstack` and exposed
+through `.codex/skills`. Use `$poteto-mode` in Codex on your next turn.
+See the [Codex compatibility note](.codex/vendor/pstack/CODEX.md) for tool mapping
+and Cursor-only features. The bootstrap script links each skill separately,
+preserving unrelated locally installed skills.
+### pstack in Claude Code
 
 `.claude/settings.json` enables [pstack](https://github.com/cursor/plugins/tree/main/pstack),
 poteto's skill pack, from the `cursor-plugins` marketplace. Claude Code installs
