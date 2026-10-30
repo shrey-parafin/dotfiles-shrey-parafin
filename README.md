@@ -34,6 +34,24 @@ scripts/bootstrap_ai_configs.sh --check
 scripts/bootstrap_ai_configs.sh --replace
 ```
 
+### pstack
+
+`.claude/settings.json` enables [pstack](https://github.com/cursor/plugins/tree/main/pstack),
+poteto's skill pack, from the `cursor-plugins` marketplace. Claude Code installs
+it on first launch once the settings file is linked. To install it by hand:
+
+```zsh
+claude plugin marketplace add cursor/plugins
+claude plugin install pstack@cursor-plugins
+claude plugin update pstack@cursor-plugins   # auto-update is off for this marketplace
+```
+
+Run `/pstack:setup-pstack` once to write model choices to
+`~/.claude/rules/pstack-models.md`. Then start rigorous tasks with
+`/pstack:poteto-mode <task>`; it picks a playbook and calls the other skills.
+`/pstack:poteto-help` explains which skill fits. Skills and agents are
+prefixed with `pstack:` in Claude Code.
+
 ## uv malware checks
 
 `UV_MALWARE_CHECK=1` is exported from `.zshrc`. uv 0.11.16 or newer checks
